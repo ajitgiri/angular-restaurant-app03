@@ -76,6 +76,7 @@ Note: Should I add bootstrap.js or bootstrap.min.js to my project?
 	Now Pushed the project to GitHub:
 	--------------------------------
 	Create the project in GitHub, without Create and initialize README file
+	Go to the project root folder and Right Clik and open: Git Bash here
 		<- git init
 		<- git remote add origin https://github.com/ajitgiri/angular-restaurant-app03.git
 		<- git remote -v :To check the permisions like (fetch/push)
@@ -83,5 +84,26 @@ Note: Should I add bootstrap.js or bootstrap.min.js to my project?
 		<- git commit -m "This is my initial Push to Repository"
 		<- git push origin master 
 		
+	Now Start containerization of this application:
+	----------------------------------------------	
+		Create Docker file : DockerFile
+		Create .dockeringnor file: .dockeringnor
+		Create NGINX Config File: nginx.conf # for the NGINX Server routing and start up file
+		Build and package the code for deploy: ng build --prod
+		Follow these bellow build and run Docker Image:
+			Open the Shell/cmd promt and navigate to the project root folder
+			ddocker build -t ajitkumardockerhub/angular-restaurant-app03:v1 . # Here Don't forgot to provide dockerid/image name
+			docker run -p 8088:80 --name angular-restaurant-app03V1 -d angular-restaurant-app03:v1
+		Test the Application: Use Different Browser like FireFox and clean the catch :	http://localhost:8088
+		Pushed the created image to the Docker Hub: docker push ajitkumardockerhub/angular-restaurant-app03:v1 
+			
+	Now push all these Dockerisation related code to the GitHub:
+	-----------------------------------------------------------
+	Go to the project root folder and Right Clik and open: Git Bash here
+		: git add . 
+		: git status 
+		: git commit -m "pushing dockerized details with respected files" 
+		: git push origin master
+
+### DONE ###
 		
-	
